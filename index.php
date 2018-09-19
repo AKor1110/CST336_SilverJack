@@ -32,3 +32,6 @@ include "core/Game.php";
         </footer>
     </body>
 </html>
+=======
+
+>>>>>>> 554a587d4459e5811f9e0da3f4ba2c49f18a4a29
