@@ -17,10 +17,14 @@ class Player {
     
     //Setters
     public function setName($name) {
+        // Arguments: Player name as string.
+        // Abstract: Sets member variable 'name' to value.
         $this->$name = $name;
     }
     
     public function setImage($image) {
+        // Arguments: Image path as string.
+        // Abstract: Sets member variable 'image' to path value.
         $this->$image = $image;
     }
 
@@ -47,6 +51,9 @@ class Player {
     
     // Displayers
     public function displayPlayer() {
+        // Arguments: None
+        // Abstract: Displays the player name, score, and image.
+        
         echo "<div id = 'player'>"; 
         echo "<h3 id = 'playerName'>" . $this->$name . "</h3>";
         echo "<h3 id = 'playerScore'>" . $this->$score . "</h3>";
@@ -55,6 +62,17 @@ class Player {
         echo "</div>";
     }
     
+    public function displayHand() {
+        // Arguments: None
+        // Abstract: Displays the players hand, via card image.
+        echo "<div id = 'playerHand'>";
+        
+        for ($this->$hand as $card) {
+            $card->$displayCard();
+        }
+        
+        echo "</div>";
+    }
     
 }
 
