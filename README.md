@@ -22,11 +22,11 @@ Front-End:
 -   displaying players' pictures + name randomly.
 -   using php functions to display cars + points
 
-- styles.css -> styling the webpage + formatting
+- styles.css -> styling the webpage + formatting #
 
 
 Back-End:
 - Player.php: holds an image + name, functions: displayPlayer(), displayName(), displayPoints(), displayHand() +
 - Card.php: hold path to images, card value @
 - Deck.php: holds Card objects @
-- Game.php: holds players, holds deck, functions: logic checking, point checking, what to on win, etc. $?
+- Game.php: holds players, holds deck, functions: logic checking, point checking, what to on win, etc. #
