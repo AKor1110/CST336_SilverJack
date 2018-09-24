@@ -10,7 +10,7 @@
         
         <?php
             include "core/Game.php";
-            
+            echo "Hello";
             
             
             
