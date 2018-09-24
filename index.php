@@ -1,13 +1,3 @@
-<?php
-
-include "core/Game.php";
-
-
-
-
-
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,9 +7,15 @@ include "core/Game.php";
     </head>
     <body>
         <header></header>
-        <div class="cardDisplay">
+        
+        <?php
+            include "core/Game.php";
             
-        </div>
+            
+            
+            
+            
+        ?>
         
         
         <footer>
@@ -32,6 +28,3 @@ include "core/Game.php";
         </footer>
     </body>
 </html>
-=======
-
->>>>>>> 554a587d4459e5811f9e0da3f4ba2c49f18a4a29

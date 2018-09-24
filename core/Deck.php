@@ -1,5 +1,7 @@
 <?php 
 
+include "Card.php";
+
 class Deck {
     // $deck will be a variable that holds a Stack object
     private $deck = null;
