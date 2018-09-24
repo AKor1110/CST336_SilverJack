@@ -8,10 +8,10 @@ class Player {
     private $playerNum = null;
     
     public function __construct() {
-        $this->$name = "";
-        $this->$image = "";
-        $this->$score = 0;
-        $this->$hand = array();
+        $this->name = "";
+        $this->image = "";
+        $this->score = 0;
+        $this->hand = array();
     }
     
     
@@ -19,13 +19,13 @@ class Player {
     public function setName($name) {
         // Arguments: Player name as string.
         // Abstract: Sets member variable 'name' to value.
-        $this->$name = $name;
+        $this->name = $name;
     }
     
     public function setImage($image) {
         // Arguments: Image path as string.
         // Abstract: Sets member variable 'image' to path value.
-        $this->$image = $image;
+        $this->image = $image;
     }
 
     
@@ -33,7 +33,7 @@ class Player {
     public function addCard($card) {
         // Arguments: Card object.
         // Abstract: Add a card object.
-        array_push($this->$hand, $card);
+        array_push($this->hand, $card);
     }
     
     public function updateScore() {
@@ -45,7 +45,7 @@ class Player {
             $newScore += $card->getValue();    
         }
         
-        $this->$score = $newScore;
+        $this->score = $newScore;
     }
     
     
@@ -55,10 +55,10 @@ class Player {
         // Abstract: Displays the player name, score, and image.
         
         echo "<div id = 'player'>"; 
-        echo "<h3 id = 'playerName'>" . $this->$name . "</h3>";
-        echo "<h3 id = 'playerScore'>" . $this->$score . "</h3>";
+        echo "<h3 id = 'playerName'>" . $this->name . "</h3>";
+        echo "<h3 id = 'playerScore'>" . $this->score . "</h3>";
         echo "<br />";
-        echo "<img src = '" . $this->$image . "' alt = '" . $this->$name . "'/>";
+        echo "<img src = '" . $this->image . "' alt = '" . $this->name . "'/>";
         echo "</div>";
     }
     
@@ -67,8 +67,8 @@ class Player {
         // Abstract: Displays the players hand, via card image.
         echo "<div id = 'playerHand'>";
         
-        foreach ($this->$hand as $card) {
-            $card->$displayCard();
+        foreach ($this->hand as $card) {
+            $card->displayCard();
         }
         
         echo "</div>";
