@@ -33,7 +33,7 @@ class Player {
     public function addCard($card) {
         // Arguments: Card object.
         // Abstract: Add a card object.
-        $this->$hand[] = $card;
+        array_push($this->$hand, $card);
     }
     
     public function updateScore() {
@@ -67,7 +67,7 @@ class Player {
         // Abstract: Displays the players hand, via card image.
         echo "<div id = 'playerHand'>";
         
-        for ($this->$hand as $card) {
+        foreach ($this->$hand as $card) {
             $card->$displayCard();
         }
         
