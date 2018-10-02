@@ -27,25 +27,31 @@ class Player {
         // Abstract: Sets member variable 'image' to path value.
         $this->image = $image;
     }
+    
+    // Getters 
+    public function draw() {
+        // Arguments: None.
+        // Abstract: Returns whether or not we can get more cards.
+        if (42 - $this->score > 5) {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public function getScore() {
+        // Arguments: None.
+        // Abstract: Returns the player's current score.
+        return $this->score;
+    }
 
     
     // Modifiers
     public function addCard($card) {
         // Arguments: Card object.
         // Abstract: Add a card object.
+        $this->score += $card->getValue();
         array_push($this->hand, $card);
-    }
-    
-    public function updateScore() {
-        // Arugments: None
-        // Abstract: Iterates through cards, calculates score.
-        $newScore = 0;
-        
-        foreach ($this->hand as $card) {
-            $newScore += $card->getValue();    
-        }
-        
-        $this->score = $newScore;
     }
     
     
