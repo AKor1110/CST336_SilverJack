@@ -29,7 +29,7 @@ class Player {
     }
     
     // Getters 
-    public function draw() {
+    public function hit() {
         // Arguments: None.
         // Abstract: Returns whether or not we can get more cards.
         if (42 - $this->score > 5) {
