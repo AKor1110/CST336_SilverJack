@@ -28,21 +28,35 @@ class Game {
     public function play() {
         $starttime = microtime(true);
         
+        $hits = array(true, true, true, true);
         
+        while ($hits[0] || $hits[1] || $hits[2] || $hits[3]) {
+            if ($hits[0]) {
+                $players[0]->addCard($deck->hit());
+                $hits[0] = $players[0]->hit();
+            }
+            
+            if ($hits[1]) {
+                $players[1]->addCard($deck->hit());
+                $hits[1] = $players[1]->hit();
+            }
+            
+            if ($hits[2]) {
+                $players[2]->addCard($deck->hit());
+                $hits[2] = $players[2]->hit();
+            }
+            
+            if ($hits[3]) {
+                $players[3]->addCard($deck->hit());
+                $hits[3] = $players[3]->hit();
+            }
+            
+        }
         
         $endtime = microtime(true);
         $timeElapsed = $endtime - $starttime;
     }
-    
-    // play round function - keeps track of # games
-    public function rounds() {
-        
-    }
-    
-    // logic for scores
-    public function score() {
-        
-    }
+ 
     
     // determine winner
     public function winner() {
@@ -70,8 +84,8 @@ class Game {
         $playerWin = winner();
         $playerWin->displayPlayer();
     }
-    // Generate players
-  
+
+    
     
 }
 
