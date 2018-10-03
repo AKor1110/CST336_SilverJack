@@ -46,21 +46,21 @@ class Game {
     
     // determine winner
     public function winner() {
-        $p0 = abs($player0->getScore() - 42);
-        $p1 = abs($player1->getScore() - 42);
-        $p2 = abs($player2->getScore() - 42);
-        $p3 = abs($player3->getScore() - 42);
+        $p0 = abs($players[0]->getScore() - 42);
+        $p1 = abs($players[1]->getScore() - 42);
+        $p2 = abs($players[2]->getScore() - 42);
+        $p3 = abs($players[3]->getScore() - 42);
         $winner = array($p0, $p1, $p2, $p3);
         sort($winner);
         $playerWin;
         if ($winner[0] == $p0) {
-            $playerWin = $player0;
+            $playerWin = $players[0];
         } else if ($winner[0] == $p1) {
-            $playerWin = $player1;
+            $playerWin = $players[1];
         } else if ($winner[0] == $p2) {
-            $playerWin = $player2;
+            $playerWin = $players[2];
         } else {
-            $playerWin = $player3;
+            $playerWin = $players[3];
         }
         return $playerWin;
     }
