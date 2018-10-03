@@ -6,6 +6,7 @@ include "Deck.php";
 class Game {
     private $players;
     private $deck;
+    private $timeElapsed;
     
     private $playerNames = array("Jeremy", "Andy", "Elizabeth", "Eric");
     private $playerImages = array("imgs/", "imgs/", "imgs/", "imgs/");
@@ -25,7 +26,12 @@ class Game {
     
     // play function
     public function play() {
+        $starttime = microtime(true);
         
+        
+        
+        $endtime = microtime(true);
+        $timeElapsed = $endtime - $starttime;
     }
     
     // play round function - keeps track of # games
@@ -57,14 +63,6 @@ class Game {
             $playerWin = $player3;
         }
         return $playerWin;
-    }
-    
-    // time elapsed + average time
-    public function totalTime() {
-        $starttime = microtime(true);
-        $endtime = microtime(true);
-        $timediff = $endtime - $starttime;
-        echo $timediff;
     }
     
     // Display Winner
