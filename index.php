@@ -13,7 +13,8 @@
         
         <?php
             include "core/Game.php";
-            
+            $game = new Game();
+            $game->play();
         ?>
         
         
