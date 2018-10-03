@@ -7,7 +7,7 @@ class Game {
     private $players;
     private $deck;
     private $timeElapsed;
-    
+    private $totalScore;
     private $playerNames = array("Jeremy", "Andy", "Elizabeth", "Eric");
     private $playerImages = array("imgs/", "imgs/", "imgs/", "imgs/");
     
@@ -52,11 +52,10 @@ class Game {
             }
             
         }
-        
+        displayWinner();
         $endtime = microtime(true);
         $timeElapsed = $endtime - $starttime;
     }
- 
     
     // determine winner
     public function winner() {
@@ -76,13 +75,18 @@ class Game {
         } else {
             $playerWin = $players[3];
         }
+        $totalScore = 0;
+        for ($i = 1; $i < 4; ++$i) {
+            $totalScore += $winner[$i];
+        }
+        
         return $playerWin;
     }
     
     // Display Winner
     public function displayWinner() {
         $playerWin = winner();
-        $playerWin->displayPlayer();
+        echo "<h4> The winner is: $playerWin </h4";
     }
 
     
