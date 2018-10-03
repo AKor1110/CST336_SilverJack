@@ -58,6 +58,10 @@ class Game {
             $totalRounds++;
         }
         
+        foreach ($players as $player) {
+            $player->displayPlayer();
+            $player->displayHand();
+        }
         $endtime = microtime(true);
         $timeElapsed = $endtime - $starttime;
         
