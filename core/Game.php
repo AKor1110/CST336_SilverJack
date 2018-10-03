@@ -70,11 +70,14 @@ class Game {
     
     // determine winner
     public function winner() {
-        $p0 = abs($players[0]->getScore() - 42);
-        $p1 = abs($players[1]->getScore() - 42);
-        $p2 = abs($players[2]->getScore() - 42);
-        $p3 = abs($players[3]->getScore() - 42);
-        $winner = array($p0, $p1, $p2, $p3);
+        $p0 = 42 - $players[0]->getScore();
+        $p1 = 42 - $players[1]->getScore();
+        $p2 = 42 - $players[2]->getScore();
+        $p3 = 42 - $players[3]->getScore();
+        $winner = array( $p0 < 0 ? $p0 * -100 : $p0,
+                         $p1 < 0 ? $p1 * -100 : $p1,
+                         $p2 < 0 ? $p2 * -100 : $p2,
+                         $p3 < 0 ? $p3 * -100 : $p3);
         sort($winner);
         $playerWin;
         if ($winner[0] == $p0) {
