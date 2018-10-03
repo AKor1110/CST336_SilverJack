@@ -7,22 +7,22 @@ class Player {
     private $hand = null;
     private $playerNum = null;
     
-    public function __construct() {
-        $this->name = "";
-        $this->image = "";
+    public function __construct($name, $image) {
+        $this->setName($name);
+        $this->setImage($image);
         $this->score = 0;
         $this->hand = array();
     }
     
     
     //Setters
-    public function setName($name) {
+    private function setName($name) {
         // Arguments: Player name as string.
         // Abstract: Sets member variable 'name' to value.
         $this->name = $name;
     }
     
-    public function setImage($image) {
+    private function setImage($image) {
         // Arguments: Image path as string.
         // Abstract: Sets member variable 'image' to path value.
         $this->image = $image;

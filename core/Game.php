@@ -4,6 +4,7 @@ include "Player.php";
 include "Deck.php";
 
 class Game {
+<<<<<<< HEAD
     private $player0;
     private $player1;
     private $player2;
@@ -78,6 +79,34 @@ class Game {
         $playerWin->displayPlayer();
     }
     // Generate players
+=======
+    private $playerNames = array("Jeremy", "Andy", "Elizabeth", "Eric");
+    private $playerImages = array("imgs/", "imgs/", "imgs/", "imgs/");
+    private $players = null;
+    private $deck = null;
+    private $numRounds = null;
+    
+    public function __construct() {
+        $deck = new Deck();
+    }
+    
+    public function play() {
+        
+    }
+    
+    public function winner() {
+        
+    }
+    
+    public function timeElapsed() {
+        
+    }
+    
+    public function displayWinner() {
+        
+    }
+    
+>>>>>>> 81c3f77a6e3746a98ecd1b7ce0096c6c88914bd2
 }
 
 ?>
