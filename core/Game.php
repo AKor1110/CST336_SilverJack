@@ -8,6 +8,8 @@ class Game {
     private $deck;
     private $timeElapsed;
     private $totalScore;
+    private $totalRounds;
+    
     private $playerNames = array("Jeremy", "Andy", "Elizabeth", "Eric");
     private $playerImages = array("imgs/", "imgs/", "imgs/", "imgs/");
     
@@ -22,6 +24,8 @@ class Game {
             new Player($playerNames[2], $playerImages[2]),
             new Player($playerNames[3], $playerImages[3])
             );
+        
+        $totalRounds = 0;
     }
     
     // play function
@@ -51,10 +55,13 @@ class Game {
                 $hits[3] = $players[3]->hit();
             }
             
+            $totalRounds++;
         }
-        displayWinner();
+        
         $endtime = microtime(true);
         $timeElapsed = $endtime - $starttime;
+        
+        displayWinner();
     }
     
     // determine winner
@@ -86,7 +93,9 @@ class Game {
     // Display Winner
     public function displayWinner() {
         $playerWin = winner();
-        echo "<h4> The winner is: $playerWin </h4";
+        echo "<h4>" . $playerWin->getName() . " wins " . $totalScore . "points!! </h4> <br />";
+        echo "<h4> Time elapsed: " . $timeElapsed . " secs </h4><br />";
+        echo "<h4> Rounds played: " . $totalRounds . "</h4><br />";
     }
 
     
