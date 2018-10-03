@@ -21,6 +21,8 @@
                     $this->cards[] = new Card("spades", ($i%13)+1);
                 }
             }
+            
+            $this->shuffleDeck();
         }
         
         public function shuffleDeck() {
