@@ -4,30 +4,24 @@ include "Player.php";
 include "Deck.php";
 
 class Game {
-<<<<<<< HEAD
-    private $player0;
-    private $player1;
-    private $player2;
-    private $player3;
+    private $players;
     private $deck;
-    // 4 players
-    // 1 deck
+    
+    private $playerNames = array("Jeremy", "Andy", "Elizabeth", "Eric");
+    private $playerImages = array("imgs/", "imgs/", "imgs/", "imgs/");
+    
+    
     public function __construct() {
-        $player0 = new Player;
-        $player1 = new Player;
-        $player2 = new Player;
-        $player3 = new Player;
+        shuffle($playerNames);
+        shuffle($playerImages);
         $deck = new Deck;
         $players = array(
-            array($player0, $player0->displayPlayer()),
-            array($player1, $player1->displayPlayer()),
-            array($player2, $player2->displayPlayer()),
-            array($player3, $player3->displayPlayer())
+            new Player($playerNames[0], $playerImages[0]),
+            new Player($playerNames[1], $playerImages[1]),
+            new Player($playerNames[2], $playerImages[2]),
+            new Player($playerNames[3], $playerImages[3])
             );
     }
-    // Constructor -> make 4 player objects, and the deck
-    // takes an array of arrays { {player name, player image path} * 4}
-    
     
     // play function
     public function play() {
@@ -79,34 +73,8 @@ class Game {
         $playerWin->displayPlayer();
     }
     // Generate players
-=======
-    private $playerNames = array("Jeremy", "Andy", "Elizabeth", "Eric");
-    private $playerImages = array("imgs/", "imgs/", "imgs/", "imgs/");
-    private $players = null;
-    private $deck = null;
-    private $numRounds = null;
+  
     
-    public function __construct() {
-        $deck = new Deck();
-    }
-    
-    public function play() {
-        
-    }
-    
-    public function winner() {
-        
-    }
-    
-    public function timeElapsed() {
-        
-    }
-    
-    public function displayWinner() {
-        
-    }
-    
->>>>>>> 81c3f77a6e3746a98ecd1b7ce0096c6c88914bd2
 }
 
 ?>
