@@ -32,7 +32,7 @@ class Player {
     public function hit() {
         // Arguments: None.
         // Abstract: Returns whether or not we can get more cards.
-        if (42 - $this->score > 5) {
+        if (abs($this->score - 42) > 5) {
             return true;
         }
         
