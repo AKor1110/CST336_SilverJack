@@ -4,32 +4,32 @@ include "Player.php";
 include "Deck.php";
 
 class Game {
-
-    // 4 players
-    // 1 deck
+    private $playerNames = array("Jeremy", "Andy", "Elizabeth", "Eric");
+    private $playerImages = array("imgs/", "imgs/", "imgs/", "imgs/");
+    private $players = null;
+    private $deck = null;
+    private $numRounds = null;
     
-    // Constructor -> make 4 player objects, and the deck
-    // takes an array of arrays { {player name, player image path} * 4}
+    public function __construct() {
+        $deck = new Deck();
+    }
     
+    public function play() {
+        
+    }
     
-    // play function
+    public function winner() {
+        
+    }
     
+    public function timeElapsed() {
+        
+    }
     
-    // play round function - keeps track of # games
+    public function displayWinner() {
+        
+    }
     
-    
-    // logic for scores
-    
-    
-    // determine winner
-    
-    
-    // time elapsed + average time
-    
-    
-    // Display Winner
-    
-    // Generate players
 }
 
 ?>
