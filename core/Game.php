@@ -11,7 +11,7 @@ class Game {
     private $totalRounds;
     
     private $playerNames = array("Jeremy", "Andy", "Elizabeth", "Eric");
-    private $playerImages = array("imgs/", "imgs/", "imgs/", "imgs/");
+    private $playerImages = array("imgs/spongebob.png", "imgs/patrick.png", "imgs/krabs.png", "imgs/sandy.png");
     
     
     public function __construct() {
