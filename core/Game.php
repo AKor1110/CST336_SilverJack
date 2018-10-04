@@ -15,14 +15,14 @@ class Game {
     
     
     public function __construct() {
-        shuffle($playerNames);
-        shuffle($playerImages);
-        $deck = new Deck;
-        $players = array(
-            new Player($playerNames[0], $playerImages[0]),
-            new Player($playerNames[1], $playerImages[1]),
-            new Player($playerNames[2], $playerImages[2]),
-            new Player($playerNames[3], $playerImages[3])
+        shuffle($this->playerNames);
+        shuffle($this->playerImages);
+        $this->deck = new Deck;
+        $this->players = array(
+            new Player($this->playerNames[0], $this->playerImages[0]),
+            new Player($this->playerNames[1], $this->playerImages[1]),
+            new Player($this->playerNames[2], $this->playerImages[2]),
+            new Player($this->playerNames[3], $this->playerImages[3])
             );
         
         $totalRounds = 0;
@@ -36,44 +36,44 @@ class Game {
         
         while ($hits[0] || $hits[1] || $hits[2] || $hits[3]) {
             if ($hits[0]) {
-                $players[0]->addCard($deck->hit());
-                $hits[0] = $players[0]->hit();
+                $this->players[0]->addCard($this->deck->hit());
+                $hits[0] = $this->players[0]->hit();
             }
             
             if ($hits[1]) {
-                $players[1]->addCard($deck->hit());
-                $hits[1] = $players[1]->hit();
+                $this->players[1]->addCard($this->deck->hit());
+                $hits[1] = $this->players[1]->hit();
             }
             
             if ($hits[2]) {
-                $players[2]->addCard($deck->hit());
-                $hits[2] = $players[2]->hit();
+                $this->players[2]->addCard($this->deck->hit());
+                $hits[2] = $this->players[2]->hit();
             }
             
             if ($hits[3]) {
-                $players[3]->addCard($deck->hit());
-                $hits[3] = $players[3]->hit();
+                $this->players[3]->addCard($this->deck->hit());
+                $hits[3] = $this->players[3]->hit();
             }
             
-            $totalRounds++;
+            $this->totalRounds++;
         }
         
-        foreach ($players as $player) {
+        foreach ($this->players as $player) {
             $player->displayPlayer();
             $player->displayHand();
         }
         $endtime = microtime(true);
-        $timeElapsed = $endtime - $starttime;
+        $this->timeElapsed = $endtime - $starttime;
         
-        displayWinner();
+        $this->displayWinner();
     }
     
     // determine winner
     public function winner() {
-        $p0 = 42 - $players[0]->getScore();
-        $p1 = 42 - $players[1]->getScore();
-        $p2 = 42 - $players[2]->getScore();
-        $p3 = 42 - $players[3]->getScore();
+        $p0 = 42 - $this->players[0]->getScore();
+        $p1 = 42 - $this->players[1]->getScore();
+        $p2 = 42 - $this->players[2]->getScore();
+        $p3 = 42 - $this->players[3]->getScore();
         $winner = array( $p0 < 0 ? $p0 * -100 : $p0,
                          $p1 < 0 ? $p1 * -100 : $p1,
                          $p2 < 0 ? $p2 * -100 : $p2,
@@ -81,17 +81,17 @@ class Game {
         sort($winner);
         $playerWin;
         if ($winner[0] == $p0) {
-            $playerWin = $players[0];
+            $playerWin = $this->players[0];
         } else if ($winner[0] == $p1) {
-            $playerWin = $players[1];
+            $playerWin = $this->players[1];
         } else if ($winner[0] == $p2) {
-            $playerWin = $players[2];
+            $playerWin = $this->players[2];
         } else {
-            $playerWin = $players[3];
+            $playerWin = $this->players[3];
         }
-        $totalScore = 0;
+        $this->totalScore = 0;
         for ($i = 1; $i < 4; ++$i) {
-            $totalScore += $winner[$i];
+            $this->totalScore += $winner[$i];
         }
         
         return $playerWin;
@@ -99,10 +99,10 @@ class Game {
     
     // Display Winner
     public function displayWinner() {
-        $playerWin = winner();
-        echo "<h4>" . $playerWin->getName() . " wins " . $totalScore . "points!! </h4> <br />";
-        echo "<h4> Time elapsed: " . $timeElapsed . " secs </h4><br />";
-        echo "<h4> Rounds played: " . $totalRounds . "</h4><br />";
+        $playerWin = $this->winner();
+        echo "<h4>" . $playerWin->getName() . " wins " . $this->totalScore . "points!! </h4> <br />";
+        echo "<h4> Time elapsed: " . $this->timeElapsed . " secs </h4><br />";
+        echo "<h4> Rounds played: " . $this->totalRounds . "</h4><br />";
     }
 
     

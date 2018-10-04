@@ -28,7 +28,7 @@
             // Abstract: displays the image of the card in a div called "displayCard"
             echo "
                 <div id='displayCard'>
-                    <img src='../imgs/".$this->suit."/".$this->value.".png' alt='The ".$this->value." of ".$this->suit."' />
+                    <img src='imgs/".$this->suit."/".$this->value.".png' alt='The ".$this->value." of ".$this->suit."' />
                 </div>
                 ";
         }
