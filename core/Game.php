@@ -105,7 +105,7 @@ class Game {
     public function displayWinner() {
         $playerWin = $this->winner();
          echo "<div id= 'displayWin'>";
-        echo "<h2>" . $playerWin->getName() . " wins " . $this->totalScore . "points!! </h2>";
+        echo "<h2 id = 'winner'>" . $playerWin->getName() . " wins " . $this->totalScore . " points!! </h2>";
         echo "</div>";
         echo "<div id= 'displayWin2'>";
         echo "<h5> Time elapsed: " . $this->timeElapsed . " secs </h5>";
