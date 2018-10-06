@@ -74,6 +74,9 @@ class Game {
         $p1 = 42 - $this->players[1]->getScore();
         $p2 = 42 - $this->players[2]->getScore();
         $p3 = 42 - $this->players[3]->getScore();
+        $sum = $this->players[0]->getScore() + $this->players[1]->getScore() + 
+                $this->players[2]->getScore() + $this->players[3]->getScore();
+
         $winner = array( $p0 < 0 ? $p0 * -100 : $p0,
                          $p1 < 0 ? $p1 * -100 : $p1,
                          $p2 < 0 ? $p2 * -100 : $p2,
@@ -89,11 +92,12 @@ class Game {
         } else {
             $playerWin = $this->players[3];
         }
-        $this->totalScore = 0;
-        for ($i = 1; $i < 4; ++$i) {
-            $this->totalScore += $winner[$i];
-        }
-        
+        // $this->totalScore = 0;
+        // for ($i = 1; $i < 4; ++$i) {
+        //     $this->totalScore += $winner[$i];
+        // }
+        $this->totalScore =$playerWin->getScore() - $sum;
+        $this->totalScore = abs($this->totalScore);
         return $playerWin;
     }
     
