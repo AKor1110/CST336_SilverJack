@@ -19,7 +19,7 @@
             $game = new Game();
             $game->play();
         ?>
-        
+
         
         <footer>
             <hr>
