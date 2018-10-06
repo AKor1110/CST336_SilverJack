@@ -15,6 +15,7 @@ class Game {
     
     
     public function __construct() {
+        session_start();
         shuffle($this->playerNames);
         shuffle($this->playerImages);
         $this->deck = new Deck();
@@ -64,7 +65,8 @@ class Game {
         }
         $endtime = microtime(true);
         $this->timeElapsed = $endtime - $starttime;
-        
+        $_SESSION["averageTime"] = ($_SESSION["averageTime"] + $this->timeElapsed) / 2;
+        $_SESSION["averageRounds"] = ($_SESSION["averageRounds"] + $this->totalRounds) / 2;
         $this->displayWinner();
     }
     
