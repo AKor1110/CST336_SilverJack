@@ -1,9 +1,57 @@
-header, footer{
+header{
+    font-family: 'Diplomata SC', cursive;
     text-align: center;
-    color: red;
+    color: black;
+    font-size: 20px;
+    background-color: white;
+    width: 1200px;
+    border: 25px solid black;
+}
+#displayWin2
+{
+    font-family: 'Diplomata SC', cursive;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+#displayWin
+{
+    font-family: 'Diplomata SC', cursive;
+    text-align: center;
+    color: black;
+    background-color: white;
+    width: 1200px;
+    border: 25px solid black;
+}
+#silverJack
+{
+    text-shadow: 2px 2px #DC0B32;
+}
+footer{
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    font-family: 'Diplomata SC', cursive;
+}
+body {
+    background-color: black;
+    background-image:url("../imgs/c_ard.jpg");
+    color: white;
+    text-align: center;
+        
+    }
+#displayWin
+{
+    text-align: center;
+}
+#displayCard{
+    
+    text-align: center;
 
 }
-body{
-    background-color: #c0b3fc;
-    color: #7e3daf;
+#player
+{
+     text-align: left;
+     font-family: 'Diplomata SC', cursive;
+     font-size: 15px;
 }

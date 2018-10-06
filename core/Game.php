@@ -11,7 +11,7 @@ class Game {
     private $totalRounds;
     
     private $playerNames = array("Jeremy", "Andy", "Elizabeth", "Eric");
-    private $playerImages = array("imgs/spongebob.png", "imgs/patrick.png", "imgs/krabs.png", "imgs/sandy.png");
+    private $playerImages = array("imgs/p1.png", "imgs/p2.png", "imgs/p3.png", "imgs/p4.png");
     
     
     public function __construct() {
@@ -100,9 +100,14 @@ class Game {
     // Display Winner
     public function displayWinner() {
         $playerWin = $this->winner();
-        echo "<h4>" . $playerWin->getName() . " wins " . $this->totalScore . "points!! </h4> <br />";
-        echo "<h4> Time elapsed: " . $this->timeElapsed . " secs </h4><br />";
-        echo "<h4> Rounds played: " . $this->totalRounds . "</h4><br />";
+         echo "<div id= 'displayWin'>";
+        echo "<h2>" . $playerWin->getName() . " wins " . $this->totalScore . "points!! </h2>";
+        echo "</div>";
+        echo "<div id= 'displayWin2'>";
+        echo "<h5> Time elapsed: " . $this->timeElapsed . " secs </h5>";
+        echo "<h6> Rounds played: " . $this->totalRounds . "</h6>";
+         echo "</div>";
+        
     }
 
     

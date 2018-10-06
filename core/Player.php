@@ -1,5 +1,4 @@
 <?php
-
 class Player {
     private $name = null;
     private $image = null;
@@ -48,7 +47,6 @@ class Player {
         // Abstract: Returns the player's current score.
         return $this->score;
     }
-
     
     // Modifiers
     public function addCard($card) {
@@ -63,12 +61,8 @@ class Player {
     public function displayPlayer() {
         // Arguments: None
         // Abstract: Displays the player name, score, and image.
-        
         echo "<div id = 'player'>"; 
-        echo "<h3 id = 'playerName'>" . $this->name . "</h3>";
-        echo "<h3 id = 'playerScore'>" . $this->score . "</h3>";
-        echo "<br />";
-        echo "<img src = '" . $this->image . "' alt = '" . $this->name . "'/>";
+        echo "<h3 id= 'playerI'> <img src = '" . $this->image . "' border= \"3\" style= \"border-color: #504C4D\" width=\"75\" height=\"75\" alt = '" . $this->name . "'/>".$this->name ." : " . $this->score."</h3>";
         echo "</div>";
     }
     
@@ -85,6 +79,4 @@ class Player {
     }
     
 }
-
-
 ?>

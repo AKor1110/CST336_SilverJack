@@ -1,5 +1,4 @@
 <?php
-
     class Card {
         
         private $suit = null;
@@ -27,10 +26,11 @@
             // Arguments: None
             // Abstract: displays the image of the card in a div called "displayCard"
             echo "
-                <div id='displayCard'>
-                    <img src='imgs/".$this->suit."/".$this->value.".png' alt='The ".$this->value." of ".$this->suit."' />
-                </div>
-                ";
+                <div id='displayCard' style='display: inline'>
+                    <img src='imgs/".$this->suit."/".$this->value.".png' border= \"6\" style= \"border-color: #504C4D\" alt='The ".$this->value." of ".$this->suit."' />
+                    </div>
+                  
+                    ";
         }
     }
 ?>
