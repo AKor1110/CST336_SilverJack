@@ -17,7 +17,7 @@ class Game {
     public function __construct() {
         shuffle($this->playerNames);
         shuffle($this->playerImages);
-        $this->deck = new Deck;
+        $this->deck = new Deck();
         $this->players = array(
             new Player($this->playerNames[0], $this->playerImages[0]),
             new Player($this->playerNames[1], $this->playerImages[1]),
