@@ -10,7 +10,7 @@
         }
         
         //Getters
-        public function getValue() {
+        public function getVal() {
             // Arguments: None
             // Abstract: Returns the numerical value of the card
             return $this->value;

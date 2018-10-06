@@ -52,7 +52,7 @@ class Player {
     public function addCard($card) {
         // Arguments: Card object.
         // Abstract: Add a card object.
-        $this->score += $card->getValue();
+        $this->score += $card->getVal();
         array_push($this->hand, $card);
     }
     
