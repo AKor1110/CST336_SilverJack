@@ -15,6 +15,10 @@ header{
     color: white;
     font-size: 20px;
     background: black;
+    width: 75%;
+    margin-left: 13%;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 #displayWin
 {

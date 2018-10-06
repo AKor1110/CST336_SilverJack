@@ -109,10 +109,13 @@ class Game {
          echo "<div id= 'displayWin'>";
         echo "<h2 id = 'winner'>" . $playerWin->getName() . " wins " . $this->totalScore . " points!! </h2>";
         echo "</div>";
+        echo "<br />";
         echo "<div id= 'displayWin2'>";
         echo "<h5> Time elapsed: " . $this->timeElapsed . " secs </h5>";
         echo "<h6> Rounds played: " . $this->totalRounds . "</h6>";
-         echo "</div>";
+        echo "<h5> Average Time Elapsed: " . $_SESSION["averageTime"] . " secs </h5>";
+        echo "<h6> Average Rounds Played: " . $_SESSION["averageRounds"] . "</h6>";
+        echo "</div>";
         
     }
 
