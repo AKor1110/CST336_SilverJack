@@ -34,7 +34,7 @@ class Game {
         
         $hits = array(true, true, true, true);
         
-        while ($hits[0] || $hits[1] || $hits[2] || $hits[3]) {
+        while ($this->deck->size() > 0 && $hits[0] || $hits[1] || $hits[2] || $hits[3]) {
             if ($hits[0]) {
                 $this->players[0]->addCard($this->deck->hit());
                 $hits[0] = $this->players[0]->hit();

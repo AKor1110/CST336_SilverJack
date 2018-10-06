@@ -25,6 +25,10 @@
             $this->shuffleDeck();
         }
         
+        public function size() {
+            return count($this->cards);
+        }
+        
         public function shuffleDeck() {
             // Arguments: None
             // Abstract: Shuffles the deck
