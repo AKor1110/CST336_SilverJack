@@ -137,10 +137,10 @@ class Game {
         echo "</div>";
         echo "<br />";
         echo "<div id= 'displayWin2'>";
-        echo "<h5> Time elapsed: " . $this->timeElapsed . " secs </h5>";
+        echo "<h5> Time elapsed: " . number_format($this->timeElapsed, 8) . " secs </h5>";
         echo "<h6> Rounds played: " . $this->totalRounds . "</h6>";
-        echo "<h5> Average Time Elapsed: " . $_SESSION["averageTime"] . " secs </h5>";
-        echo "<h6> Average Rounds Played: " . $_SESSION["averageRounds"] . "</h6>";
+        echo "<h5> Average Time Elapsed: " . number_format($_SESSION["averageTime"], 8) . " secs </h5>";
+        echo "<h6> Average Rounds Played: " . number_format($_SESSION["averageRounds"], 8) . "</h6>";
         echo "</div>";
         
     }
